@@ -4,7 +4,7 @@
     <div class="card">
         <img class="card-img-top" src="{{ $data['thumbnail'] }}" alt="">
         <div class="card-body">
-            <h5 class="card-title">{{ $data['title']  }} . '</h5>
+            <h5 class="card-title">{{ $data['title']  }}</h5>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Published: {{ $data['publishedAt'] }}</li>
@@ -15,7 +15,7 @@
             <li class="list-group-item">Quality: {{ $data['dimension'] }}</li>
         </ul>
         <div class="card-body">
-            <a href="/channel/{{ $data['id'] }}" class="btn btn-primary">Back to channel</a>'
+            <a href="/channel/{{ $data['id'] }}" class="btn btn-primary">Back to channel</a>
         </div>
     </div>
 @endsection
