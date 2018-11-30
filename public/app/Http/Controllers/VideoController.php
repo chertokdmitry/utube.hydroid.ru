@@ -12,7 +12,7 @@ class VideoController extends Controller
         $video = new YouTubeVideo();
         $data = $video->getVideo($id);
 
-        $view = view('video', ['data' => $data[0]])->render();
+        $view = view('video', ['data' => $data[0], 'videoId' => $id])->render();
         return (new Response($view));
     }
 

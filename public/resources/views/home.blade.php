@@ -2,23 +2,27 @@
 
 @section('content')
 
-        <div class="title m-b-md">
-            Youtube
-        </div>
-        <div class="card-deck" style="margin-bottom: 1rem">
+        <div class="row">
 
                 @foreach ($channels as $channel)
 
-                <div class="card" style="min-width: 240px;">
-                    <div class="card-body mr-10">
-                        <img class="card-img-top" src="{{ $channel['thumbnail'] }}">
-                        <br><br>
-                        <h6 class="card-title">
-                            <a href="/channel/{{ $channel['id'] }}">{{ $channel['title'] }}</a>
-                        </h6>
-                        <p class="card-text">
-                            {{ $channel['publishedAt'] }}
-                        </p>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="{{ $channel['thumbnail'] }}" alt="">
+                        <div class="card-body">
+                            <p class="card-text">{{ $channel['title'] }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/channel/{{ $channel['id'] }}" class="btn btn-sm btn-outline-secondary">Перейти</a>
+
+                                </div>
+
+                                @php
+                                {{ $date = date('Y-m-d H:i', strtotime($channel['publishedAt'] )); }}
+                                @endphp
+                                <small class="text-muted">{{ $date }}</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endforeach
